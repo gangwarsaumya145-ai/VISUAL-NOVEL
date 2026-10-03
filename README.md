@@ -14,3 +14,4 @@ HTML5
 CSS3
 JavaScript (ES6)
 Google Fonts (Creepster, Special Elite)
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/cacf7905-ab32-4ed6-9b85-2ab97f41a05e" />
