@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Message at 11:11</title>
+    <!-- Google Fonts for horror mystery typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Title / Start Screen -->
+    <div id="startScreen">
+        <h1 class="title">The Message at 11:11</h1>
+        <p class="subtitle">A Creepy Mystery Visual Novel</p>
+        <button id="startButton">START GAME</button>
+    </div>
+
+    <!-- Main Game Container -->
+    <main class="game">
+        <!-- Main story scene -->
+        <div class="scene" id="scene">
+            <!-- Overlay for blackout transitions -->
+            <div id="overlay"></div>
+
+            <!-- Mina portrait -->
+            <div class="portrait-panel" id="portraitPanel">
+                <img id="portrait" src="IMAGES/mina_portrait.jpeg" alt="Mina">
+            </div>
+        </div>
+
+        <!-- Dialogue box -->
+        <div class="dialogue">
+            <h2 id="name">Mina</h2>
+            <p id="text"></p>
+            <div id="choices"></div>
+            <button id="nextButton">Next →</button>
+        </div>
+    </main>
+    <audio id="bgm" src="scoopy_music.mpeg" loop preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #050508;  
+    font-family: 'Special Elite', cursive, Georgia, serif;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;
+    color: #e0e0e0;
+}
+
+/* =========================
+TITLE / START SCREEN
+========================= */
+
+#startScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #050508;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+    padding: 20px;
+    box-shadow: inset 0 0 100px rgba(139, 0, 0, 0.5);
+}
+
+#startScreen .title {
+    font-family: 'Creepster', cursive;
+    font-size: 50px;
+    color: #ff3333;
+    margin: 0 0 10px;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    letter-spacing: 3px;
+}
+
+#startScreen .subtitle {
+    font-size: 18px;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+
+#startButton {
+    border: 2px solid #8b0000;
+    background: #1a0505;
+    color: #ff4d4d;
+    padding: 14px 35px;
+    font-size: 20px;
+    font-family: 'Special Elite', cursive;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+#startButton:hover {
+    background: #8b0000;
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.game {
+    width: 94%;
+    max-width: 1100px;
+}
+
+/* =========================
+STORY SCENE & HORROR EFFECTS
+========================= */
+
+.scene {
+    width: 100%;
+    height: 600px;
+    position: relative;  
+    overflow: hidden;  
+    border-radius: 12px 12px 0 0;  
+    background-color: #0a0a0c;  
+    background-size: cover;  
+    background-position: center center;  
+    background-repeat: no-repeat;  
+    box-shadow: 0 0 35px rgba(139, 0, 0, 0.35), inset 0 0 100px rgba(0, 0, 0, 0.85);  
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    transition: background-image 0.5s ease-in-out;
+}
+
+.scene::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.88) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 6;
+}
+
+#overlay.active {
+    opacity: 1;
+}
+
+/* =========================
+PORTRAIT PANEL
+========================= */
+
+.portrait-panel {
+    position: absolute;
+    left: 25px;  
+    bottom: 20px;  
+    width: 260px;  
+    height: 330px;  
+    overflow: hidden;  
+    border-radius: 8px;  
+    border: 2px solid rgba(180, 50, 50, 0.6);  
+    background: #000;  
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(139, 0, 0, 0.4);  
+    z-index: 5;
+    transition: opacity 0.3s ease;
+}
+
+.portrait-panel img {
+    width: 100%;
+    height: 100%;
+    display: block;  
+    object-fit: cover;
+    filter: contrast(115%) brightness(85%);
+}
+
+/* =========================
+DIALOGUE BOX
+========================= */
+
+.dialogue {
+    min-height: 190px;
+    padding: 24px 30px;  
+    background: #0c0b12;  
+    border-radius: 0 0 12px 12px;  
+    border-top: 2px solid #8b0000;  
+    color: #d1d1d1;  
+    position: relative;  
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+}
+
+#name {
+    margin: 0 0 10px;
+    font-size: 26px;  
+    color: #ff3333;
+    font-family: 'Creepster', cursive, sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+#text {
+    margin: 0;
+    min-height: 65px;  
+    font-size: 19px;  
+    line-height: 1.6;  
+    color: #e0e0e0;
+}
+
+/* =========================
+NEXT BUTTON
+========================= */
+
+button {
+    float: right;
+    border: 1px solid #8b0000;  
+    border-radius: 4px;  
+    padding: 10px 22px;  
+    margin-top: 10px;  
+    font-family: 'Special Elite', cursive, serif;  
+    font-size: 15px;  
+    background: #1a0505;  
+    color: #ff4d4d;  
+    cursor: pointer;  
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.3);
+}
+
+button:hover {
+    background: #8b0000;
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.8);
+    transform: scale(1.03);
+}
+
+/* =========================
+MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 700px) {
+    #startScreen .title {
+        font-size: 34px;
+    }
+
+    .scene {  
+        height: 420px;  
+    }  
+
+    .portrait-panel {  
+        width: 160px;  
+        height: 210px;  
+        left: 12px;  
+        bottom: 12px;  
+    }  
+
+    .dialogue {  
+        min-height: 210px;  
+        padding: 18px;  
+    }  
+
+    #text {  
+        font-size: 16px;  
+    }
+}
